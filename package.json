@@ -7,7 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/"
+    "test": "mocha test/",
+    "gen-min": "uglifyjs lib/index.js > dist/gh.min.js",
+    "update-min": "cp dist/gh.min.js example/gh.min.js && git add example && git commit -m 'Updated gh.min.js in the example dir' .",
+    "deploy": "cp -r example ../_tmp && git checkout gh-pages && cp -r ../_tmp/* . && git add . -A && git commit -m 'Rebuild.' && rm -rf ../_tmp ../_tmp.js"
   },
   "repository": {
     "type": "git",
