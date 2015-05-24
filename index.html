@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/caiuss/1.0.2/caiuss.min.css" type="text/css" media="screen" charset="utf-8">
+        <script src="gh.js"></script>
+        <title>GitHub API (gh.js)</title>
+        <style>
+            h1 { margin-bottom: 0; }
+            a:hover { color: inherit !important; }
+            .description { margin-top: 0; }
+            pre#result {
+                background: rgb(251, 251, 251);
+                border: 1px solid rgb(217, 217, 217);
+                padding: 30px;
+                overflow: auto;
+                border-radius: 4px;
+            }
+
+            small {
+                color: rgb(183, 183, 183);
+                font-size: 13px;
+                margin-left: 12px;
+            }
+        </style>
+        <script>
+            window.addEventListener("load", function () {
+                var urlEl = document.getElementById("url")
+                  , resultEl = document.getElementById("result")
+                  , gh = new GitHub()
+                  , reqTimeout = null
+                  ;
+
+                function req() {
+                    gh.get(urlEl.value, function (err, result) {
+                        resultEl.innerHTML = JSON.stringify(err || result, null, 4);
+                    });
+                }
+
+                urlEl.addEventListener("input", function () {
+                    clearTimeout(reqTimeout);
+                    reqTimeout = setTimeout(req, 1000);
+                });
+
+                req();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>gh.js<small>CLIENT SIDE</small></h1>
+            <p class="description">Check out the project on <a target="blank" href="https://github.com/IonicaBizau/gh.js">GitHub</a>.</p>
+            <input type="text" placeholder="Url" value="users/IonicaBizau" id="url" class="form-elm">
+            <pre id="result"></pre>
+        </div>
+    </body>
+</html>
