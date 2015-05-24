@@ -27,10 +27,15 @@ apiServer.page.add("/users/IonicaBizau/repos", function (lien) {
       , res = repos.slice(start, start + perPage)
       ;
 
+      debugger;
     lien.end(res);
 });
 
-var gh = new GitHub({ host: HOST });
-gh.get("users/IonicaBizau/repos", { all: true }, function (err, repos) {
-    console.log(err || repos);
+apiServer.on("load", function (err) {
+    if (err) { throw err; }
+
+    var gh = new GitHub({ host: HOST });
+    gh.get("users/IonicaBizau/repos", { all: true }, function (err, repos) {
+        console.log(err || repos);
+    });
 });
