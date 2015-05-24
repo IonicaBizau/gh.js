@@ -1,15 +1,20 @@
+// Dependencies
 var GitHub = require("../lib")
   , Lien = require("lien")
+  , Assert = require("assert")
   ;
 
+// Constants
 const PORT = 7000
     , HOST = "http://localhost:" + PORT + "/"
     ;
 
+// Initialize the API server
 var apiServer = new Lien({
     port: PORT
 });
 
+// Add the API route
 apiServer.page.add("/users/IonicaBizau/repos", function (lien) {
     var repos = [
             {
@@ -27,15 +32,29 @@ apiServer.page.add("/users/IonicaBizau/repos", function (lien) {
       , res = repos.slice(start, start + perPage)
       ;
 
-      debugger;
     lien.end(res);
 });
 
-apiServer.on("load", function (err) {
-    if (err) { throw err; }
+// Server start
+it("should wait until the server starts", function (cb) {
+    // TODO
+    return cb();
+    if (apiServer.isStarted()) {
+        return cb();
+    }
+    apiServer.on("load", function (err) {
+        Assert.equal(err, null);
+        cb();
+    });
+});
 
+// Get all items
+it("should get all the items using all:true", function (cb) {
     var gh = new GitHub({ host: HOST });
     gh.get("users/IonicaBizau/repos", { all: true }, function (err, repos) {
-        console.log(err || repos);
+        Assert.equal(err, null);
+        Assert.equal(repos.length, 2);
+        Assert.equal(repos[0].name, "foo");
+        cb();
     });
 });
