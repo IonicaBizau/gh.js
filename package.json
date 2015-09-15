@@ -29,9 +29,9 @@
   },
   "homepage": "https://github.com/IonicaBizau/gh.js",
   "dependencies": {
-    "jsonrequest": "^2.0.0",
-    "ul": "^2.1.0",
-    "lien": "^0.0.11"
+    "jsonrequest": "^3.0.1",
+    "ul": "^5.0.0",
+    "lien": "^0.0.12"
   },
   "devDependencies": {
     "mocha": "^2.2.5"
