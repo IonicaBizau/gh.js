@@ -23,7 +23,7 @@
     "wrapper"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com>",
-  "license": "MIT",
+  "license": "KINDLY",
   "bugs": {
     "url": "https://github.com/IonicaBizau/gh.js/issues"
   },
@@ -35,5 +35,8 @@
   },
   "devDependencies": {
     "mocha": "^2.2.5"
+  },
+  "blah": {
+      "h_img": "http://i.imgur.com/ku5PMH1.png"
   }
 }

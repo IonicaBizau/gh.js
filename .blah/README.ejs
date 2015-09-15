@@ -13,17 +13,42 @@
 <!-- * * * Thanks! * * *                                                    -->
 <!---------------------------------------------------------------------------->
 
-![gh.js](http://i.imgur.com/ku5PMH1.png)
 
-# gh.js [![Donate now][donate-now]][paypal-donations]
+<% // Dependencies %>
+<% var IsThere = require("is-there"); %>
+<% var Fs = require("fs"); %>
+<% var Path = require("path"); %>
+<% var Ul = require("ul"); %>
 
-Tiny GitHub API wrapper for server and client.
+<% // Compute the directory paths %>
+<% var binPath = Path.join(_.path, "bin"); %>
+<% var examplesPath = Path.join(_.path, "examples"); %>
+<% var examplePath = Path.join(_.path, "example"); %>
+<% var example = IsThere(examplePath) ? examplePath : IsThere(examplesPath) ? examplesPath : null; %>
+<% var isCli = IsThere(binPath); %>
 
+<% if (_.pack.blah.h_img) { %>
+![<%- _.pack.name %>](<%- _.pack.blah.h_img %>)
+<% } %>
+
+<% // Create the name and description %>
+<% if (isCli) { %>
+# `$ <%- _.pack.name %>` [![Donate now][donate-now]][paypal-donations]
+<% } else { %>
+# <%- _.pack.name %> [![Donate now][donate-now]][paypal-donations]
+<% } %>
+<%- _.pack.description %>
+
+<% if (_.pack.blah.ex_img) { %>
+![<%- _.pack.name %>](<%-_.pack.blah.ex_img %>)
+<% } %>
+
+<% // INSTALLATION %>
 ## Installation
 
 ### Server
 ```sh
-$ npm i gh.js
+$ npm i <%- _.pack.name %>
 ```
 
 Then you can use it this way:
@@ -54,72 +79,62 @@ gh.get("users/IonicaBizau", function (err, repos) {
 </script>
 ```
 
-## Example
 
-```js
-// Dependencies
-var GitHub = require("gh.js");
+<% // Cli usage %>
+<% if (isCli) { %>
+### CLI Usage
+You can install the package globally and use it as command line tool:
 
-// Create a new instance
-var gh = new GitHub();
-gh.get("users/IonicaBizau", function (err, repos) {
-    console.log(err || repos);
-});
-
+```sh
+$ npm i -g <%- _.pack.name %>
 ```
 
+Then, run `<%- _.pack.name %> --help` and see what the cli tool can do.
+
+<% } %>
+
+<% // Show the example if there is one %>
+<% if (example) { %>
+<% var exStrPath = Path.join(example, "index.js"); %>
+<% if (!IsThere(exStrPath)) { %>
+<%   example = null; %>
+<% } %>
+<% if (example) { %>
+## Example
+
+<% if (isCli) { %>
+Here is an example how to use this package as library.
+<% } %>
+
+<% var exStr = Fs.readFileSync(exStrPath, "utf-8"); %>
+<% exStr = exStr.replace("../lib", _.pack.name) %>
+
+```js
+<%- exStr %>
+```
+<% } %>
+<% } %>
+
+<% // Documentation %>
 ## Documentation
 
-### `GitHub(options)`
-Creates a new instance of `GitHub`.
+<% if (isCli) { %>
+For full API reference, see the [DOCUMENTATION.md][docs] file.
+<% } else { %>
+<% docs = docs.split("\n").slice(3).join("\n"); %>
+<%- docs %>
+<% } %>
 
-#### Params
-- **Object** `options`: An object containing the following options:
- - `host` (String): The GitHub API host (default: `"https://api.github.com/"`).
- - `token` (String): The GitHub token.
- - `user_agent` (String): The user agen (default: `"gh.js"`).
-
-#### Return
-- **GitHub** A new `GitHub` instance.
-
-### `req(url, data, callback)`
-Makes a request to the GitHub API.
-
-#### Params
-- **String** `url`: The request url.
-- **Object** `data`: The data object.
-- **Function** `callback`: The callback function.
-
-#### Return
-- **Request** The request object.
-
-### `checkResponse(err, data, res, callback)`
-Checks if the response is an error or not.
-
-#### Params
-- **Error** `err`: The error value.
-- **Object** `data`: The data object.
-- **Response** `res`: The response object.
-- **Function** `callback`: The callback option.
-
-### `get(url, options, callback)`
-Higher level function for making API requests.
-
-#### Params
-- **String** `url`: The request url.
-- **Object** `options`: An object containing the following fields:
-- **Function** `callback`: The callback function.
-
-#### Return
-- **Request** The request object.
-
+<% // How to contribute %>
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
+<% // License information %>
 ## License
 [KINDLY][license] © [Ionică Bizău][website]–The [LICENSE](/LICENSE) file contains
 a copy of the license.
 
+<% // Links %>
 [license]: http://ionicabizau.github.io/kindly-license/?author=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica@gmail.com%3E&year=2015
 [contributing]: /CONTRIBUTING.md
 [website]: http://ionicabizau.net
