@@ -73,7 +73,7 @@ GitHub.prototype.req = function (url, data, callback) {
     // Handle the token
     if (self.token) {
         url += url.indexOf("?") > -1 ? "&" : "?";
-        url += self.token;
+        url += '&access_token='+self.token;
     }
 
     // Jsonreq on server, XHR on client
