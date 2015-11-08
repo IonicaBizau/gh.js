@@ -90,6 +90,11 @@
           ]
         }
       }
-    ]
+    ],
+    "usages": {
+      "ul": [
+        "[Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)"
+      ]
+    }
   }
 }

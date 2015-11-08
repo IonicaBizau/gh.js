@@ -106,6 +106,8 @@ If you are using this library in one of your projects, add it in this list. :spa
 
  - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)
 
+ - [Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)
+
 ## License
 
 [KINDLY][license] © [Ionică Bizău][website]
