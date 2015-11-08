@@ -22,7 +22,7 @@
     "api",
     "wrapper"
   ],
-  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
   "license": "KINDLY",
   "bugs": {
     "url": "https://github.com/IonicaBizau/gh.js/issues"
@@ -37,6 +37,59 @@
     "mocha": "^2.2.5"
   },
   "blah": {
-    "h_img": "http://i.imgur.com/ku5PMH1.png"
+    "h_img": "http://i.imgur.com/ku5PMH1.png",
+    "show_installation": false,
+    "installation": [
+      {
+        "h2": "Installation"
+      },
+      {
+        "h3": "Server"
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": "$ npm i gh.js"
+        }
+      },
+      {
+        "p": "Then you can use it this way:"
+      },
+      {
+        "code": {
+          "language": "js",
+          "content": [
+            "var GitHub = require(\"gh.js\");",
+            "",
+            "var gh = new GitHub({",
+            "    token: \"an optional token\"",
+            "});",
+            "",
+            "gh.get(\"users/IonicaBizau\", function (err, repos) {",
+            "    console.log(err || repos);",
+            "});"
+          ]
+        }
+      },
+      {
+        "h3": "Client"
+      },
+      {
+        "code": {
+          "language": "html",
+          "content": [
+            "<script src=\"path/to/gh.js\"></script>",
+            "<script>",
+            "(function () {",
+            "    var gh = new GitHub();",
+            "    gh.get(\"users/IonicaBizau\", function (err, repos) {",
+            "        console.log(err || repos);",
+            "    });",
+            "})();",
+            "</script>"
+          ]
+        }
+      }
+    ]
   }
 }
