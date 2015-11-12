@@ -1,6 +1,7 @@
 [![gh.js](http://i.imgur.com/ku5PMH1.png)](#)
 
 # gh.js [![Support this project][donate-now]][paypal-donations]
+
 Tiny GitHub API wrapper for server and client.
 
 ## Installation
