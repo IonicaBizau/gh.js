@@ -1,8 +1,8 @@
 [![gh.js](http://i.imgur.com/ku5PMH1.png)](#)
 
-# gh.js [![Support this project][donate-now]][paypal-donations]
+# gh.js [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/gh.js.svg)](https://travis-ci.org/IonicaBizau/gh.js/) [![Version](https://img.shields.io/npm/v/gh.js.svg)](https://www.npmjs.com/package/gh.js) [![Downloads](https://img.shields.io/npm/dt/gh.js.svg)](https://www.npmjs.com/package/gh.js) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
-Tiny GitHub API wrapper for server and client.
+> Tiny GitHub API wrapper for server and client.
 
 ## Installation
 ### Server
@@ -105,7 +105,11 @@ If you are using this library in one of your projects, add it in this list. :spa
 
  - [`gh-following`](https://github.com/IonicaBizau/gh-following#readme)
 
+ - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)
+
  - [`gh-polyglot`](https://github.com/IonicaBizau/node-gh-polyglot)
+
+ - [`github-emojify`](https://github.com/IonicaBizau/github-emojifiy#readme)
 
  - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)
 
