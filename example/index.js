@@ -5,7 +5,7 @@ const GitHub = require("../lib");
 
 // Create a new instance
 let gh = new GitHub();
-gh.get("users/IonicaBizau", function (err, user) {
+gh.get("users/IonicaBizau", (err, user) => {
     console.log(err || user);
 });
 
@@ -14,6 +14,6 @@ gh.get("users/IonicaBizau/repos", {
     all: (err, pageRepos, currentPage) => {
         console.log("Fetched page " + currentPage);
     }
-}, function (err, repos) {
+}, (err, repos) => {
     console.log(err || repos);
 });
