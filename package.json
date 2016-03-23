@@ -42,7 +42,7 @@
     "show_installation": false,
     "installation": [
       {
-        "h2": "Installation"
+        "h2": ":cloud: Installation"
       },
       {
         "h3": "Server"

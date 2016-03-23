@@ -36,26 +36,36 @@ gh.get("users/IonicaBizau", function (err, repos) {
 </script>
 ```
 
-## Example
+## :clipboard: Example
 
 ```js
 // Dependencies
-var GitHub = require("gh.js");
+const GitHub = require("gh.js");
 
 // Create a new instance
-var gh = new GitHub();
-gh.get("users/IonicaBizau", function (err, repos) {
+let gh = new GitHub();
+gh.get("users/IonicaBizau", (err, user) => {
+    console.log(err || user);
+});
+
+// Get the repositories of a user
+gh.get("users/IonicaBizau/repos", {
+    all: (err, pageRepos, currentPage) => {
+        console.log("Fetched page " + currentPage);
+    }
+}, (err, repos) => {
     console.log(err || repos);
 });
 ```
 
-## Documentation
+## :memo: Documentation
 
 ### `GitHub(options)`
 Creates a new instance of `GitHub`.
 
 #### Params
-- **Object** `options`: An object containing the following options:
+- **String|Object** `options`: An access token or an object containing the following options:
+
  - `host` (String): The GitHub API host (default: `"https://api.github.com/"`).
  - `token` (String): The GitHub token.
  - `user_agent` (String): The user agen (default: `"gh.js"`).
@@ -63,12 +73,19 @@ Creates a new instance of `GitHub`.
 #### Return
 - **GitHub** A new `GitHub` instance.
 
-### `req(url, data, callback)`
+### `req(url, options, callback)`
 Makes a request to the GitHub API.
 
 #### Params
 - **String** `url`: The request url.
-- **Object** `data`: The data object.
+- **Object** `options`: An object containing the following fields:
+ - `all` (Boolean|Function): If `true`, then the endpoint pages will be
+   iterated and the results will be concatenated in one array. If a function
+   is provided, that function will be called when a page is fetched.
+ - `opts` (Object): An object containing querystring parameters to be stringified.
+ - `data` (Object): The POST data (if provided the request will be a POST request).
+ - `req_options` (Object): Custom options passed to [`jsonrequest`](https://github.com/IonicaBizau/jsonrequest).
+ - `method` (String): Custom method (by default: `GET` or `POST`, if there is data).
 - **Function** `callback`: The callback function.
 
 #### Return
@@ -89,35 +106,34 @@ Higher level function for making API requests.
 #### Params
 - **String** `url`: The request url.
 - **Object** `options`: An object containing the following fields:
- - `all` (Boolean): If `true`, then the endpoint pages will be iterated and the results will be concatenated in one array.
+ - `all` (Boolean|Function): If `true`, then the endpoint pages will be
+   iterated and the results will be concatenated in one array. If a function
+   is provided, that function will be called when a page is fetched.
  - `opts` (Object): An object containing querystring parameters to be stringified.
  - `data` (Object): The POST data (if provided the request will be a POST request).
+ - `req_options` (Object): Custom options passed to [`jsonrequest`](https://github.com/IonicaBizau/jsonrequest).
+ - `method` (String): Custom method (by default: `GET` or `POST`, if there is data).
 - **Function** `callback`: The callback function.
 
 #### Return
 - **Request** The request object.
 
-## How to contribute
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
+## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
- - [`gh-following`](https://github.com/IonicaBizau/gh-following#readme)
-
- - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)
-
- - [`gh-polyglot`](https://github.com/IonicaBizau/node-gh-polyglot)
-
- - [`github-emojify`](https://github.com/IonicaBizau/github-emojifiy#readme)
-
- - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)
-
- - [`sort-github-user-repos`](https://github.com/IonicaBizau/sort-github-user-repos#readme)
-
+ - [`gh-following`](https://github.com/IonicaBizau/gh-following#readme)—Fetches the users you follow but they don't follow you and the users that follow you but you don't.
+ - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)—Receive desktop notifications from your GitHub dashboard.
+ - [`gh-polyglot`](https://github.com/IonicaBizau/node-gh-polyglot)—Get language stats about GitHub users and repositories.
+ - [`gh-repos`](https://github.com/IonicaBizau/gh-repos#readme)—Get one or all the owner repositories from GitHub.
+ - [`github-emojify`](https://github.com/IonicaBizau/github-emojifiy#readme)—Emojify your GitHub repository descriptions.
+ - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)—Automagically create issue labels in your GitHub projects.
+ - [`sort-github-user-repos`](https://github.com/IonicaBizau/sort-github-user-repos#readme)—Sort GitHub repositories by stars for user.
  - [Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)
 
-## License
+## :scroll: License
 
 [MIT][license] © [Ionică Bizău][website]
 
