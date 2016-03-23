@@ -30,11 +30,11 @@
   "homepage": "https://github.com/IonicaBizau/gh.js",
   "dependencies": {
     "jsonrequest": "^3.0.1",
-    "ul": "^5.0.0",
-    "lien": "^0.0.12"
+    "ul": "^5.0.0"
   },
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "lien": "^0.0.12"
   },
   "blah": {
     "h_img": "http://i.imgur.com/ku5PMH1.png",
