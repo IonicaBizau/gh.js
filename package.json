@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/IonicaBizau/gh.js",
   "dependencies": {
-    "jsonrequest": "^3.0.1",
+    "jsonrequest": "^4.1.0",
     "ul": "^5.0.0"
   },
   "devDependencies": {
     "dist-it": "^2.0.1",
-    "lien": "^0.0.12",
-    "mocha": "^2.2.5"
+    "lien": "^1.0.1",
+    "mocha": "^2.4.5"
   },
   "blah": {
     "h_img": "http://i.imgur.com/ku5PMH1.png",
