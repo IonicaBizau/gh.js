@@ -15,8 +15,8 @@ var apiServer = new Lien({
 });
 
 // Add the API route
-apiServer.page.add("/users/IonicaBizau/repos", function (lien) {
-    var repos = [
+apiServer.addPage("/users/IonicaBizau/repos", function (lien) {
+    let repos = [
             {
                 "name": "foo"
               , "full_name": "IonicaBizau/foo"
@@ -26,8 +26,8 @@ apiServer.page.add("/users/IonicaBizau/repos", function (lien) {
               , "full_name": "IonicaBizau/foo"
             }
         ]
-      , perPage = parseInt(lien.search.per_page) || 2
-      , page = parseInt(lien.search.page) || 1
+      , perPage = parseInt(lien.query.per_page) || 2
+      , page = parseInt(lien.query.page) || 1
       , start = (page - 1) * perPage
       , res = repos.slice(start, start + perPage)
       ;
