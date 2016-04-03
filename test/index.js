@@ -16,7 +16,7 @@ var apiServer = new Lien({
 
 // Add the API route
 apiServer.addPage("/users/IonicaBizau/repos", function (lien) {
-    let repos = [
+    var repos = [
             {
                 "name": "foo"
               , "full_name": "IonicaBizau/foo"
