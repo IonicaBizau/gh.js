@@ -1,6 +1,6 @@
 {
   "name": "gh.js",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Tiny GitHub API wrapper for server and client.",
   "main": "lib/index.js",
   "directories": {
@@ -97,5 +97,16 @@
         "[Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)"
       ]
     }
-  }
+  },
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "dist/",
+    "src/",
+    "resources/",
+    "menu/",
+    "cli.js",
+    "index.js"
+  ]
 }
