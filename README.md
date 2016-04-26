@@ -1,10 +1,11 @@
+
 [![gh.js](http://i.imgur.com/ku5PMH1.png)](#)
 
 # gh.js [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Travis](https://img.shields.io/travis/IonicaBizau/gh.js.svg)](https://travis-ci.org/IonicaBizau/gh.js/) [![Version](https://img.shields.io/npm/v/gh.js.svg)](https://www.npmjs.com/package/gh.js) [![Downloads](https://img.shields.io/npm/dt/gh.js.svg)](https://www.npmjs.com/package/gh.js) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
 > Tiny GitHub API wrapper for server and client.
 
-## Installation
+## :cloud: Installation
 ### Server
 ```sh
 $ npm i gh.js
@@ -38,6 +39,8 @@ gh.get("users/IonicaBizau", function (err, repos) {
 
 ## :clipboard: Example
 
+
+
 ```js
 // Dependencies
 const GitHub = require("gh.js");
@@ -59,6 +62,7 @@ gh.get("users/IonicaBizau/repos", {
 ```
 
 ## :memo: Documentation
+
 
 ### `GitHub(options)`
 Creates a new instance of `GitHub`.
@@ -118,11 +122,14 @@ Higher level function for making API requests.
 #### Return
 - **Request** The request object.
 
+
+
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
+
 
  - [`gh-following`](https://github.com/IonicaBizau/gh-following#readme)—Fetches the users you follow but they don't follow you and the users that follow you but you don't.
  - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)—Receive desktop notifications from your GitHub dashboard.
@@ -132,6 +139,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)—Automagically create issue labels in your GitHub projects.
  - [`sort-github-user-repos`](https://github.com/IonicaBizau/sort-github-user-repos#readme)—Sort GitHub repositories by stars for user.
  - [Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)
+
 
 ## :scroll: License
 
