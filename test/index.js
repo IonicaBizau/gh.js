@@ -1,60 +1,61 @@
-// Dependencies
-var GitHub = require("../lib")
-  , Lien = require("lien")
-  , Assert = require("assert")
-  ;
+"use strict";
+
+const tester = require("tester")
+    , GitHub = require("../lib")
+    , Lien = require("lien")
+    ;
 
 // Constants
 const PORT = 7000
     , HOST = "http://localhost:" + PORT + "/"
     ;
 
-// Initialize the API server
-var apiServer = new Lien({
-    port: PORT
-});
+tester.describe("gh.js", t => {
+    t.it("starts the localhost API server", cb => {
+        // Initialize the API server
+        let apiServer = new Lien({
+            port: PORT
+        });
 
-// Add the API route
-apiServer.addPage("/users/IonicaBizau/repos", function (lien) {
-    var repos = [
-            {
-                "name": "foo"
-              , "full_name": "IonicaBizau/foo"
-            },
-            {
-                "name": "foo"
-              , "full_name": "IonicaBizau/foo"
-            }
-        ]
-      , perPage = parseInt(lien.query.per_page) || 2
-      , page = parseInt(lien.query.page) || 1
-      , start = (page - 1) * perPage
-      , res = repos.slice(start, start + perPage)
-      ;
+        // Add the API route
+        apiServer.addPage("/users/IonicaBizau/repos", lien => {
+            let repos = [
+                    {
+                        "name": "foo"
+                      , "full_name": "IonicaBizau/foo"
+                    },
+                    {
+                        "name": "foo"
+                      , "full_name": "IonicaBizau/foo"
+                    }
+                ]
+              , perPage = parseInt(lien.query.per_page) || 2
+              , page = parseInt(lien.query.page) || 1
+              , start = (page - 1) * perPage
+              , res = repos.slice(start, start + perPage)
+              ;
 
-    lien.end(res);
-});
+            lien.end(res);
+        });
 
-// Server start
-it("should wait until the server starts", function (cb) {
-    // TODO
-    return cb();
-    if (apiServer.isStarted()) {
-        return cb();
-    }
-    apiServer.on("load", function (err) {
-        Assert.equal(err, null);
-        cb();
+        apiServer.on("load", cb);
     });
-});
 
-// Get all items
-it("should get all the items using all:true", function (cb) {
     var gh = new GitHub({ host: HOST });
-    gh.get("users/IonicaBizau/repos", { all: true }, function (err, repos) {
-        Assert.equal(err, null);
-        Assert.equal(repos.length, 2);
-        Assert.equal(repos[0].name, "foo");
-        cb();
+    t.should("should get all the items using all:true", cb => {
+        gh.get("users/IonicaBizau/repos", { all: true }, (err, repos) => {
+            t.expect(err).toBe(null);
+            t.expect(repos.length).toBe(2);
+            t.expect(repos[0].name).toBe("foo");
+            cb();
+        });
     });
+
+    t.should("should get all the items using all:true", () => {
+        t.expect(() => {
+            gh.get("users/IonicaBizau/");
+        }).toThrow(/Do not add the trailing slash/);
+    });
+
+    t.it("", () => process.exit());
 });
