@@ -16,13 +16,13 @@ $ npm i gh.js
 Then you can use it this way:
 
 ```js
-var GitHub = require("gh.js");
+let GitHub = require("gh.js");
 
-var gh = new GitHub({
+let gh = new GitHub({
     token: "an optional token"
 });
 
-gh.get("users/IonicaBizau", function (err, repos) {
+gh.get("users/IonicaBizau", (err, repos) => {
     console.log(err || repos);
 });
 ```
@@ -67,7 +67,6 @@ gh.get("users/IonicaBizau/repos", {
 ```
 
 ## :memo: Documentation
-
 
 ### `GitHub(options)`
 Creates a new instance of `GitHub`.

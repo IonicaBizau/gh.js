@@ -61,13 +61,13 @@
         "code": {
           "language": "js",
           "content": [
-            "var GitHub = require(\"gh.js\");",
+            "let GitHub = require(\"gh.js\");",
             "",
-            "var gh = new GitHub({",
+            "let gh = new GitHub({",
             "    token: \"an optional token\"",
             "});",
             "",
-            "gh.get(\"users/IonicaBizau\", function (err, repos) {",
+            "gh.get(\"users/IonicaBizau\", (err, repos) => {",
             "    console.log(err || repos);",
             "});"
           ]
