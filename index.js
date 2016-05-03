@@ -4,7 +4,10 @@
 const GitHub = require("../lib");
 
 // Create a new instance
-let gh = new GitHub();
+let gh = new GitHub("");
+// Or for authenticated requests, send the access token
+// let gh = new GitHub("access token");
+
 gh.get("users/IonicaBizau", (err, user) => {
     console.log(err || user);
 });
