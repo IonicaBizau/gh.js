@@ -68,6 +68,7 @@ gh.get("users/IonicaBizau/repos", {
 
 ## :memo: Documentation
 
+
 ### `GitHub(options)`
 Creates a new instance of `GitHub`.
 
