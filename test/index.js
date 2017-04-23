@@ -54,7 +54,10 @@ tester.describe("gh.js", t => {
     t.should("should get all the items using all:true", () => {
         t.expect(() => {
             gh.get("users/IonicaBizau/");
-        }).toThrow(/Do not add the trailing slash/);
+        }).toThrow(/Do not add any trailing slash/);
+        t.expect(() => {
+            gh.get("/users/IonicaBizau");
+        }).toThrow(/Do not add any trailing slash/);
     });
 
     t.it("", () => process.exit());
