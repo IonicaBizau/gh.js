@@ -6,6 +6,7 @@ You can see below the API reference of this module.
 Creates a new instance of `GitHub`.
 
 #### Params
+
 - **String|Object** `options`: An access token or an object containing the following options:
 
  - `host` (String): The GitHub API host (default: `"https://api.github.com/"`).
@@ -19,6 +20,7 @@ Creates a new instance of `GitHub`.
 Makes a request to the GitHub API.
 
 #### Params
+
 - **String** `url`: The request url.
 - **Object** `options`: An object containing the following fields:
  - `all` (Boolean|Function): If `true`, then the endpoint pages will be
@@ -37,6 +39,7 @@ Makes a request to the GitHub API.
 Checks if the response is an error or not.
 
 #### Params
+
 - **Error** `err`: The error value.
 - **Object** `data`: The data object.
 - **Response** `res`: The response object.
@@ -46,6 +49,7 @@ Checks if the response is an error or not.
 Higher level function for making API requests.
 
 #### Params
+
 - **String** `url`: The request url.
 - **Object** `options`: An object containing the following fields:
  - `all` (Boolean|Function): If `true`, then the endpoint pages will be
