@@ -192,8 +192,10 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`made-in`](https://github.com/IonicaBizau/made-in#readme)—Get GitHub projects created by users from a specific location.
  - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
  - [`sort-github-user-repos`](https://github.com/IonicaBizau/sort-github-user-repos#readme)—Sort GitHub repositories by stars for user.
- - [Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)
-
+ - [`Hubber Memory Game`](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)—The classic memory game, with your favorite hubbers
+ - [`sort-github-stars-size`](https://github.com/ZYSzys/sort-github-stars-size) (by ZYSzys)—Sort your personal starred repos by repo's size.
+ - [`github-personal-stars`](https://github.com/ZYSzys/github-personal-stars) (by ZYSzys)—Count your personal repos' total stars.
+ 
 
 ## :scroll: License
 
