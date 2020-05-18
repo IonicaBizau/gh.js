@@ -1,6 +1,6 @@
 {
   "name": "gh.js",
-  "version": "3.0.13",
+  "version": "3.1.0",
   "description": "Tiny GitHub API wrapper for server and client.",
   "main": "lib/index.js",
   "directories": {
