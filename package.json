@@ -34,8 +34,9 @@
     "ul": "^5.0.0"
   },
   "devDependencies": {
-    "dist-it": "^2.0.1",
-    "lien": "^1.0.1",
+    "dist-it": "^3.1.10",
+    "lien": "^3.3.1",
+    "namy": "^1.2.11",
     "tester": "^1.3.2"
   },
   "blah": {
