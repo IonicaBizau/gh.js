@@ -266,20 +266,7 @@ Thanks! :heart:
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
- - `made-in`
- - `gh-repos`
- - `gh-polyglot`
- - `gh-fork-source`
- - `located-in`
- - `bloggify-github-login`
- - `gh-notifier`
- - `github-personal-stars`
- - `sort-github-stars-size`
- - `github-emojify`
- - `github-labeller`
- - `sort-github-user-repos`
- - `ship-release`
- - `gh-following`
+
  - [Hubber Memory Game](https://github.com/alysonla/hubber-memory-game) by [**@alysonla**](https://github.com/alysonla/)
 
 
