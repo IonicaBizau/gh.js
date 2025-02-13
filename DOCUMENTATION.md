@@ -40,7 +40,7 @@ Checks if the response is an error or not.
 
 #### Params
 
-- **Error** `err`: The error value.
+- **Error|null** `err`: The error value.
 - **Object** `data`: The data object.
 - **Response** `res`: The response object.
 - **Function** `callback`: The callback option.
